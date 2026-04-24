@@ -1,5 +1,29 @@
 'use strict';
 
+// ===== THEME TOGGLE =====
+const themeToggle = document.getElementById('themeToggle');
+const themeColorMeta = document.querySelector('meta[name="theme-color"]');
+
+function applyTheme(theme) {
+  const isDark = theme === 'dark';
+  document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
+  if (themeColorMeta) themeColorMeta.content = isDark ? '#1A0A0E' : '#FFF8F5';
+  if (themeToggle) {
+    themeToggle.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+  }
+}
+
+// Sync aria-label with the theme already set by the head script
+applyTheme(document.documentElement.getAttribute('data-theme') || 'light');
+
+if (themeToggle) {
+  themeToggle.addEventListener('click', () => {
+    const next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    localStorage.setItem('qd-theme', next);
+    applyTheme(next);
+  });
+}
+
 // ===== NAV: sticky shadow + mobile toggle =====
 const navWrapper = document.getElementById('top') && document.querySelector('.nav-wrapper');
 const navToggle = document.getElementById('navToggle');

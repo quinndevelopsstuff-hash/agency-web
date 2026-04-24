@@ -76,9 +76,9 @@ ul { list-style: none; }
   --transition:     0.2s ease;
 }
 
-/* ── Dark theme — system preference ── */
+/* ── Dark theme — system preference (skipped when user has manually set data-theme) ── */
 @media (prefers-color-scheme: dark) {
-  :root {
+  html:not([data-theme]) {
     --color-base:     #1A0A0E;
     --color-section:  #2E1218;
     --color-subtle:   #5A2030;
@@ -354,9 +354,47 @@ ul { list-style: none; }
 .nav-toggle.open span:nth-child(2) { opacity: 0; }
 .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
+.nav-end {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  border-radius: var(--radius-sm);
+  color: var(--color-text);
+  -webkit-tap-highlight-color: transparent;
+  transition: background var(--transition), color var(--transition);
+}
+
+.theme-toggle:hover { background: var(--overlay-subtle); }
+
+.theme-toggle:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.theme-toggle svg { pointer-events: none; }
+
+.icon-sun  { display: none; }
+.icon-moon { display: block; }
+[data-theme="dark"] .icon-sun  { display: block; }
+[data-theme="dark"] .icon-moon { display: none; }
+
 @media (min-width: 768px) {
   .nav-toggle { display: none; }
-  .nav-links { display: flex; }
+  .nav-links { display: flex; margin-left: auto; }
+  .nav { justify-content: flex-start; gap: 8px; }
 }
 
 /* Mobile nav drawer */

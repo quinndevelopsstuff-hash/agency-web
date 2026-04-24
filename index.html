@@ -12,13 +12,21 @@
   <meta property="og:type" content="website" />
   <meta name="robots" content="index, follow" />
   <!-- Theme color for mobile browsers -->
-  <meta name="theme-color" content="#2C4A3E">
+  <meta name="theme-color" content="#FFF8F5">
   <!-- Theme color for Safari on iOS -->
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <!-- Theme color for Windows/Edge -->
-  <meta name="msapplication-navbutton-color" content="#2C4A3E">
-  <meta name="msapplication-TileColor" content="#2C4A3E">
+  <meta name="msapplication-navbutton-color" content="#FFF8F5">
+  <meta name="msapplication-TileColor" content="#FFF8F5">
+  <script>
+    (function(){
+      var t=localStorage.getItem('qd-theme')||(window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');
+      document.documentElement.setAttribute('data-theme',t);
+      var m=document.querySelector('meta[name="theme-color"]');
+      if(m)m.content=t==='dark'?'#1A0A0E':'#FFF8F5';
+    })();
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
@@ -32,9 +40,6 @@
       <a href="#top" class="nav-logo">
         <span class="logo-qd">QD</span><span class="logo-text"> Web Services</span>
       </a>
-      <button class="nav-toggle" id="navToggle" aria-label="Open menu">
-        <span></span><span></span><span></span>
-      </button>
       <ul class="nav-links" id="navLinks">
         <li><a href="#how-it-works">How It Works</a></li>
         <li><a href="#pricing">Pricing</a></li>
@@ -42,6 +47,15 @@
         <!-- <li><a href="#testimonials">Reviews</a></li> -->
         <li><a href="#contact" class="nav-cta">Get a Quote</a></li>
       </ul>
+      <div class="nav-end">
+        <button class="theme-toggle" id="themeToggle" aria-label="Switch to dark mode">
+          <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+          <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <button class="nav-toggle" id="navToggle" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </nav>
   </header>
 
