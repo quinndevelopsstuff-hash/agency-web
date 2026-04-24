@@ -132,11 +132,13 @@ if (form) {
     const business = fields.business.el.value.trim();
     const email = fields.email.el.value.trim();
     const pkg = fields.package.el.options[fields.package.el.selectedIndex].text;
+    const maintenanceEl = form.querySelector('#maintenance');
+    const maintenance = maintenanceEl.options[maintenanceEl.selectedIndex].text;
     const message = form.querySelector('#message').value.trim();
 
     const subject = encodeURIComponent(`Website Quote Request — ${business}`);
     const body = encodeURIComponent(
-      `Name: ${name}\nBusiness: ${business}\nEmail: ${email}\nPackage: ${pkg}\n\nMessage:\n${message || '(none)'}`
+      `Name: ${name}\nBusiness: ${business}\nEmail: ${email}\nPackage: ${pkg}\nMaintenance Plan: ${maintenance}\n\nMessage:\n${message || '(none)'}`
     );
 
     const mailtoLink = `mailto:qdwebservices22@gmail.com?subject=${subject}&body=${body}`;
