@@ -36,8 +36,8 @@ ul { list-style: none; }
   --cream-dark:          #EDD8D0;
   --cream-feature:       #EED5DC;
   --color-white:         #FFFFFF;
-  --color-accent-hover:  #D03048;
-  --color-subtle-light:  rgba(232,68,90,0.12);
+  --color-accent-hover:  #C73348;
+  --color-subtle-light:  rgba(232,68,90,0.10);
   --peach-lighter:       rgba(232,68,90,0.10);
   --accent-border:       rgba(232,68,90,0.25);
   --gold:                #F4A011;
