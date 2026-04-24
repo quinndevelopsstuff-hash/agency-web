@@ -5,6 +5,11 @@
   padding: 0;
 }
 
+/* Smooth theme color transitions */
+*, *::before, *::after {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
 html {
   scroll-behavior: smooth;
   font-size: 16px;
@@ -256,7 +261,7 @@ ul { list-style: none; }
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--color-border);
-  transition: box-shadow var(--transition);
+  transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow var(--transition);
 }
 
 .nav-wrapper.scrolled {
@@ -342,7 +347,7 @@ ul { list-style: none; }
   height: 2px;
   background: var(--color-text);
   border-radius: 2px;
-  transition: transform 0.25s, opacity 0.25s;
+  transition: background-color 0.3s ease, transform 0.25s, opacity 0.25s;
 }
 
 .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
@@ -574,7 +579,7 @@ ul { list-style: none; }
   padding: 32px 28px;
   position: relative;
   box-shadow: var(--shadow-sm);
-  transition: box-shadow var(--transition), transform var(--transition);
+  transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow var(--transition), transform var(--transition);
 }
 
 .pricing-card:hover {
@@ -828,7 +833,7 @@ ul { list-style: none; }
   border-radius: var(--radius);
   padding: 28px 24px;
   box-shadow: var(--shadow-sm);
-  transition: box-shadow var(--transition), transform var(--transition);
+  transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow var(--transition), transform var(--transition);
 }
 
 .trust-card:hover {
@@ -879,7 +884,7 @@ ul { list-style: none; }
   flex-direction: column;
   gap: 16px;
   box-shadow: var(--shadow-sm);
-  transition: box-shadow var(--transition);
+  transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow var(--transition);
 }
 
 .testimonial-card:hover { box-shadow: var(--shadow-md); }
@@ -1038,7 +1043,7 @@ ul { list-style: none; }
   border: 1.5px solid var(--color-border);
   border-radius: var(--radius-sm);
   padding: 12px 14px;
-  transition: border-color var(--transition), box-shadow var(--transition);
+  transition: background-color 0.3s ease, color 0.3s ease, border-color var(--transition), box-shadow var(--transition);
   appearance: none;
   -webkit-appearance: none;
   outline: none;
@@ -1140,7 +1145,7 @@ ul { list-style: none; }
   font-weight: 600;
   font-size: 0.92rem;
   word-break: break-all;
-  transition: opacity var(--transition);
+  transition: color 0.3s ease, opacity var(--transition);
 }
 
 .footer-email:hover { opacity: 0.8; }
