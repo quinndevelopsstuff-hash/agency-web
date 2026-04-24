@@ -1047,6 +1047,7 @@ ul { list-style: none; }
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
+  padding-left: calc(1.4rem + 14px);
 }
 
 .contact-phone-btns .btn {
