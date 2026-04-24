@@ -386,10 +386,10 @@ ul { list-style: none; }
 
 .theme-toggle svg { pointer-events: none; }
 
-.icon-sun  { display: none; }
-.icon-moon { display: block; }
-[data-theme="dark"] .icon-sun  { display: block; }
-[data-theme="dark"] .icon-moon { display: none; }
+.icon-sun  { display: block; }
+.icon-moon { display: none; }
+[data-theme="dark"] .icon-sun  { display: none; }
+[data-theme="dark"] .icon-moon { display: block; }
 
 @media (min-width: 768px) {
   .nav-toggle { display: none; }
