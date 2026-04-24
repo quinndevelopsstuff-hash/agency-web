@@ -1043,6 +1043,19 @@ ul { list-style: none; }
 
 .contact-guarantee strong { color: var(--color-text); }
 
+.contact-phone-btns {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.contact-phone-btns .btn {
+  flex: 1;
+  min-width: 120px;
+  padding: 11px 20px;
+  font-size: 0.95rem;
+}
+
 /* Form */
 .contact-form {
   background: var(--color-base);
