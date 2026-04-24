@@ -1052,8 +1052,8 @@ ul { list-style: none; }
 .contact-phone-btns .btn {
   flex: 1;
   min-width: 120px;
-  padding: 11px 20px;
-  font-size: 0.95rem;
+  padding: 8px 16px;
+  font-size: 0.875rem;
 }
 
 /* Form */
